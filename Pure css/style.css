@@ -1,0 +1,313 @@
+:root {
+--maxWidth: 1250px;
+--searchHeight: 40px;
+--logoColor: rgb(253, 212, 30);
+--menuHeight: 45px;
+--greyBorder: .5px solid rgb(209, 209, 209);
+--hightlight:  rgb(226, 226, 226);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+* {box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    max-width: var(--maxWidth);
+    min-width: 960px;
+    margin: 0 auto;
+    min-height: 200vh;
+    background-color: white;
+    position: relative;
+
+}
+.header {
+    background-color: #fff;
+    margin: 0 auto;
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    max-width: var(--maxWidth);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    align-items: center;
+    z-index: 10;
+    transition: .7s linear;
+  
+}
+.headerRest {position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    max-height: 100px;
+    height: 100px;
+    width: 100vw;
+    z-index: 9;
+    transition: .7s linear;
+    
+}
+.logo {
+    cursor: pointer;
+    display: block;
+    font-size: 50px;
+    font-family: Arial, Helvetica;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: black;
+    font-weight: 600;
+    flex-grow: 1;
+    
+    
+}
+.logo .yellowdot {box-sizing: content-box;
+    margin-right: 7px;
+    display: block;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    background-color: var(--logoColor);
+}
+
+.searcher {position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+}
+.searchbar {width: 300px;
+    height: var(--searchHeight);
+    border-radius: 30px;
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    align-items: center;
+
+}
+.szukaj {border-style: none;
+    padding-left: 5px;
+    font-size: 20px;
+    opacity: .2;
+    background-color: rgb(231, 231, 231);
+    flex-grow: 1;
+}
+
+.searcher button {
+    height: var(--searchHeight);
+    border-radius: 30px;
+    background-color: var(--logoColor);
+    font-size: 13px;
+    width: 100px;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(110%);
+
+
+}
+.searcher button .szukaj2 {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+.sympatia, .zakupy, .gry, .vod, .praca, .email {
+    font-family: sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding-right: 8px;
+    cursor: pointer;
+
+}
+i {
+    font-size: 16px;
+}
+.email i {
+    background-color: var(--logoColor);
+    border-radius: 50%;
+    padding: 7px;
+}
+
+.bigboard {
+    height: var(--menuHeight);
+    padding-top: 12vh;
+    padding-bottom: 50px;
+    display: flex;
+}
+.clickers {height: var(--menuHeight);
+    display: flex;
+    width: var(--maxWidth);
+    margin: 0 auto;
+}
+.clickers .click {flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--greyBorder);
+    font-size: 14px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.click i {
+    padding-left: 5px;
+}
+.click:hover {
+    background-color: var(--hightlight);
+    cursor: pointer;
+}
+.clickers .click:nth-child(4):hover  >  .hoverer {
+    display: flex;
+
+}
+.clickers .click:nth-child(9) {
+    background-color: var(--logoColor);
+}
+.clickers .click:nth-child(9):hover {
+    color: white;
+}
+.clickers .right {
+    border-right: none;
+}
+.clickers .click:nth-child(10) i {
+    font-size: 20px !important;
+}
+.outer {height: var(--menuHeight);
+    position: absolute;
+    left: -10vw;
+    top: 12vh;
+border: var(--greyBorder);
+width: 110vw;
+border-left: none;
+border-right: none;
+}
+.hoverer {background-color: white;
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    height: 360px;
+    width: 400px;
+    top: calc(12vh + var(--menuHeight));
+    left: 79px;
+    border: var(--greyBorder);
+}
+.hoverer span {
+    padding: 10px 10px 20px 15px;
+    cursor: pointer;
+    line-height: 25px;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-right: var(--greyBorder);
+}
+.dots {background-color: white;
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    height: 200px;
+    width: 150px;
+    top: calc(12vh + var(--menuHeight));
+    right: 0;
+    border: var(--greyBorder);
+}
+.dots span {font-size: 15px;
+    line-height: 20px;
+    padding: 10px 10px 20px 15px;
+    text-transform: uppercase;
+}
+.clickers .click:nth-child(10):hover > .dots {
+    display: flex;
+}
+.hoverer span:hover {
+    background-color: var(--hightlight);
+}
+.click:nth-child(4):hover .hoverer{
+    display: block;
+}
+
+.artMain {margin-top:  50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    width: 100%;
+}
+.articles {margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.articles .title {
+    align-self: center;
+    margin-bottom: 100px;
+    display: flex;
+}
+.title button {
+    margin-left: 20px;
+    padding: 5px;
+    font-size: 20px;
+    
+}
+
+.article {margin: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+    flex-grow: 1;
+}
+.article span:nth-child(1) {
+    font-size: 25px;
+
+}
+.article span:nth-child(2) {
+    font-size: 20px;
+}
+.article img {
+    max-width: 350px;
+
+}
+
+.createNew {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid black;
+    
+}
+.exit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    background-color: black;
+    color: white;
+    border: 1px solid grey;
+}
+
+.do {
+    margin-top: 30px;
+    width: 100px;
+    padding: 5px 0;
+    align-self: center;
+}
+/* .shade */
+
+
+
+
